@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Solar System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stars" id="stars"></div>
+        
+        <div class="solar-system">
+            <div class="sun"></div>
+            
+            <div class="orbit" id="mercury-orbit">
+                <div class="planet" id="mercury" data-planet="mercury"></div>
+            </div>
+            
+            <div class="orbit" id="venus-orbit">
+                <div class="planet" id="venus" data-planet="venus"></div>
+            </div>
+            
+            <div class="orbit" id="earth-orbit">
+                <div class="planet" id="earth" data-planet="earth"></div>
+            </div>
+            
+            <div class="orbit" id="mars-orbit">
+                <div class="planet" id="mars" data-planet="mars"></div>
+            </div>
+            
+            <div class="orbit" id="jupiter-orbit">
+                <div class="planet" id="jupiter" data-planet="jupiter"></div>
+            </div>
+            
+            <div class="orbit" id="saturn-orbit">
+                <div class="planet" id="saturn" data-planet="saturn">
+                    <div class="saturn-rings"></div>
+                </div>
+            </div>
+            
+            <div class="orbit" id="uranus-orbit">
+                <div class="planet" id="uranus" data-planet="uranus"></div>
+            </div>
+            
+            <div class="orbit" id="neptune-orbit">
+                <div class="planet" id="neptune" data-planet="neptune"></div>
+            </div>
+        </div>
+        
+        <div class="info-panel" id="info-panel">
+            <button class="close-btn" id="close-btn">X</button>
+            <h2 id="planet-name">Planet Name</h2>
+            <p id="planet-description">Select a planet to see information about it.</p>
+            <div id="planet-details">
+                <p><strong>Diameter:</strong> <span id="planet-diameter">-</span></p>
+                <p><strong>Distance from Sun:</strong> <span id="planet-distance">-</span></p>
+                <p><strong>Orbital Period:</strong> <span id="planet-period">-</span></p>
+                <p><strong>Moons:</strong> <span id="planet-moons">-</span></p>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="pause-btn">Pause</button>
+            <button id="reset-btn">Reset View</button>
+            <button id="speed-up">Speed Up</button>
+            <button id="speed-down">Slow Down</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

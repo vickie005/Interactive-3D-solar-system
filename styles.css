@@ -1,0 +1,316 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            perspective: 1000px;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .solar-system {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            transform-style: preserve-3d;
+            animation: rotate 120s infinite linear;
+        }
+
+        @keyframes rotate {
+            from { transform: rotateY(0) rotateX(15deg); }
+            to { transform: rotateY(360deg) rotateX(15deg); }
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80px;
+            height: 80px;
+            margin-top: -40px;
+            margin-left: -40px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #ffd000, #ff8c00, #ff4500);
+            box-shadow: 0 0 50px #ff8c00, 0 0 100px #ff4500;
+            z-index: 10;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform-style: preserve-3d;
+        }
+
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .planet:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+
+        #mercury-orbit {
+            width: 150px;
+            height: 150px;
+            margin-top: -75px;
+            margin-left: -75px;
+            animation: orbit 5s infinite linear;
+        }
+
+        #mercury {
+            width: 12px;
+            height: 12px;
+            background: linear-gradient(to right, #a9a9a9, #696969);
+            top: -6px;
+            left: 50%;
+            margin-left: -6px;
+        }
+
+        #venus-orbit {
+            width: 220px;
+            height: 220px;
+            margin-top: -110px;
+            margin-left: -110px;
+            animation: orbit 8s infinite linear;
+        }
+
+        #venus {
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(to right, #e39e54, #b76935);
+            top: -9px;
+            left: 50%;
+            margin-left: -9px;
+        }
+
+        #earth-orbit {
+            width: 300px;
+            height: 300px;
+            margin-top: -150px;
+            margin-left: -150px;
+            animation: orbit 10s infinite linear;
+        }
+
+        #earth {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(to right, #6b93d6, #2e5ba6, #1e3f72);
+            top: -10px;
+            left: 50%;
+            margin-left: -10px;
+        }
+
+        #mars-orbit {
+            width: 380px;
+            height: 380px;
+            margin-top: -190px;
+            margin-left: -190px;
+            animation: orbit 15s infinite linear;
+        }
+
+        #mars {
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(to right, #c1440e, #8b2e03);
+            top: -8px;
+            left: 50%;
+            margin-left: -8px;
+        }
+
+        #jupiter-orbit {
+            width: 500px;
+            height: 500px;
+            margin-top: -250px;
+            margin-left: -250px;
+            animation: orbit 30s infinite linear;
+        }
+
+        #jupiter {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(to right, #c9a77e, #a57c4e, #7d5c34);
+            top: -20px;
+            left: 50%;
+            margin-left: -20px;
+        }
+
+        #saturn-orbit {
+            width: 600px;
+            height: 600px;
+            margin-top: -300px;
+            margin-left: -300px;
+            animation: orbit 40s infinite linear;
+        }
+
+        #saturn {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(to right, #e4d191, #d4b454);
+            top: -17.5px;
+            left: 50%;
+            margin-left: -17.5px;
+        }
+
+        .saturn-rings {
+            position: absolute;
+            width: 60px;
+            height: 10px;
+            background: rgba(210, 180, 140, 0.7);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            margin-top: -5px;
+            margin-left: -30px;
+            transform: rotateX(75deg);
+        }
+
+        #uranus-orbit {
+            width: 680px;
+            height: 680px;
+            margin-top: -340px;
+            margin-left: -340px;
+            animation: orbit 50s infinite linear;
+        }
+
+        #uranus {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(to right, #a6d1e6, #7bb5d3);
+            top: -14px;
+            left: 50%;
+            margin-left: -14px;
+        }
+
+        #neptune-orbit {
+            width: 760px;
+            height: 760px;
+            margin-top: -380px;
+            margin-left: -380px;
+            animation: orbit 60s infinite linear;
+        }
+
+        #neptune {
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(to right, #5b5bff, #3a3ac7);
+            top: -13px;
+            left: 50%;
+            margin-left: -13px;
+        }
+
+        @keyframes orbit {
+            from { transform: rotateZ(0deg); }
+            to { transform: rotateZ(360deg); }
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            transform: translateX(350px);
+            transition: transform 0.5s ease;
+            z-index: 100;
+        }
+
+        .info-panel.active {
+            transform: translateX(0);
+        }
+
+        .info-panel h2 {
+            margin-bottom: 10px;
+            color: #ff8c00;
+        }
+
+        .info-panel p {
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .info-panel .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .controls button {
+            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .solar-system {
+                width: 500px;
+                height: 500px;
+            }
+            
+            .info-panel {
+                width: 250px;
+            }
+        }
